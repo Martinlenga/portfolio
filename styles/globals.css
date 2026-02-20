@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #050505;
+  --color-stark: #F2F2F2;
+  --color-neon: #39FF14;
+  --color-surface: #111111;
+  --color-muted: #888888;
+  
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  --shadow-neon-glow: 0 0 10px var(--color-neon), 0 0 20px var(--color-neon);
+  --shadow-neon-hover: 0 0 15px var(--color-neon), 0 0 30px var(--color-neon);
+}
+
+/* Base HTML & Body Setup */
+html {
+  background-color: var(--color-void);
+  color: var(--color-stark);
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-stark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Neon Text Selection */
+::selection {
+  background-color: var(--color-neon);
+  color: var(--color-void);
+}
+::-moz-selection {
+  background-color: var(--color-neon);
+  color: var(--color-void);
+}
+
+/* Custom Utilities for v4 */
+@utility text-glow {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.5), 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+@utility glass-panel {
+  background: rgba(17, 17, 17, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
